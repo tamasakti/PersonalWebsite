@@ -4,6 +4,9 @@ import iconInstagram from "assets/Instragram.webp";
 import iconBehance from "assets/Behance.webp";
 import iconDribble from "assets/Dribbble.webp";
 import iconLinkedIn from "assets/LinkedIn.webp";
+import musiclab from "/Musiclab.webp";
+import imdb from "/imdb.webp";
+import poke from "/poke.webp";
 
 import react from "../assets/1631110818-logo-react-js.webp";
 import tailwind from "../assets/tailwindcss-templates.webp";
@@ -41,10 +44,21 @@ const Hero = () => {
       </div>
       <div className="flex flex-row">
         <div className="lg:flex flex-col hidden w-[5%]  items-center">
-          <img src={iconInstagram} className="w-8/12 mx-auto" />
-          <img src={iconDribble} className="w-8/12 mx-auto mt-5" />
-          <img src={iconBehance} className="w-8/12 mx-auto mt-5" />
-          <img src={iconLinkedIn} className="w-8/12 mx-auto mt-5" />
+          <a href="https://www.instagram.com/gumilangtama/" target="_blank">
+            <img
+              src={iconInstagram}
+              className="w-8/12 mx-auto cursor-pointer"
+            />
+          </a>
+          <a href="https://dribbble.com/gumilangtama" target="_blank">
+            <img src={iconDribble} className="w-8/12 mx-auto mt-5" />
+          </a>
+          <a href="https://www.behance.net/Tawcodesign" target="_blank">
+            <img src={iconBehance} className="w-8/12 mx-auto mt-5" />
+          </a>
+          <a href="https://www.linkedin.com/in/tamasakti/" target="_blank">
+            <img src={iconLinkedIn} className="w-8/12 mx-auto mt-5" />
+          </a>
         </div>
         <div className="flex  lg:w-[90%] ">
           <img src={imgAvatar} className="lg:w-3/12 w-6/12 mx-auto -mt-20 " />
@@ -163,17 +177,41 @@ const RecentWork = () => {
           </h1>
           <p className="text-slate-400 text-lg lg:text-xl text-center mt-5">
             Here are my projects I've worked on. Want to see more?{" "}
-            <span className="text-black font-semibold"> Email me. </span>
+            <span className="text-black font-semibold">
+              <a
+                href="https://github.com/tamasakti"
+                className="cursor-pointer hover:underline"
+                target="_blank"
+              >
+                {" "}
+                See My Github Repository
+              </a>{" "}
+            </span>
           </p>
           <div className="grid lg:grid-cols-2 grid-cols-1 gap-8 w-8/12 mx-auto mt-10 lg:mt-20">
             <div>
-              <CardProjects />
+              <CardProjects
+                image={musiclab}
+                link={"https://musiclab-id.vercel.app/"}
+                target={"_blank"}
+                project_name="MusicLab"
+              />
             </div>
             <div className="-mt-72 lg:m-0">
-              <CardProjects />
+              <CardProjects
+                image={imdb}
+                link={"https://film-ku-imdb-clone.vercel.app/"}
+                target={"_blank"}
+                project_name="Imdb Clone"
+              />
             </div>
             <div className="-mt-72">
-              <CardProjects />
+              <CardProjects
+                image={poke}
+                link={"https://pokemon-app-pokeapi.vercel.app/"}
+                target={"_blank"}
+                project_name="Pokedex"
+              />
             </div>
             <div className="-mt-72">
               <CardProjects />
@@ -191,22 +229,25 @@ const RecentWork = () => {
               <CardProjects />
             </div>
           </div>
-          <div className="-mt-72 mx-auto">
-            <button className="px-7 py-2 border-2 border-slate-900 text-slate-900 rounded-xl font-bold hover:bg-slate-900 hover:text-white">
-              Load More
-            </button>
-          </div>
+          <div className="-mt-72 mx-auto"></div>
         </div>
       </div>
     </>
   );
 };
 
-const CardProjects = () => {
+const CardProjects = ({ image, link, target, project_name }: any) => {
   return (
     <>
       <div className="w-full min-h-screen">
-        <div className="w-full h-[20rem] bg-slate-500 rounded-xl"></div>
+        <div className="w-full h-[20rem] bg-slate-500 rounded-xl group">
+          <a href={link} target={target} className="cursor-pointer">
+            <img src={image} className="w-full h-full group-hover:opacity-80" />
+            <p className="text-2xl text-black text-center font-poppins font-semibold mt-5">
+              {project_name}
+            </p>
+          </a>
+        </div>
       </div>
     </>
   );
