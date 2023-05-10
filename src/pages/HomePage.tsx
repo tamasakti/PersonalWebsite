@@ -194,7 +194,6 @@ const RecentWork = () => {
                 image={musiclab}
                 link={"https://musiclab-id.vercel.app/"}
                 target={"_blank"}
-                project_name="MusicLab"
               />
             </div>
             <div className="-mt-72 lg:m-0">
@@ -202,7 +201,6 @@ const RecentWork = () => {
                 image={imdb}
                 link={"https://film-ku-imdb-clone.vercel.app/"}
                 target={"_blank"}
-                project_name="Imdb Clone"
               />
             </div>
             <div className="-mt-72">
@@ -210,7 +208,6 @@ const RecentWork = () => {
                 image={poke}
                 link={"https://pokemon-app-pokeapi.vercel.app/"}
                 target={"_blank"}
-                project_name="Pokedex"
               />
             </div>
             <div className="-mt-72">
